@@ -92,6 +92,9 @@ setup(
     keywords='speechrecognition asr voiceactivitydetection vad webrtc',
     ext_modules=[module],
     py_modules=['webrtcvad'],
+    install_requires=[
+        'importlib-metadata; python_version < "3.8"',
+    ],
     test_suite='nose.collector',
     # List additional groups of dependencies here (e.g. development
     # dependencies). You can install these using the following syntax,

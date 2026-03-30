@@ -1,12 +1,16 @@
-import pkg_resources
+try:
+    # Python 3.8+
+    from importlib.metadata import version
+except ImportError:  # pragma: no cover
+    # Backport for Python < 3.8
+    from importlib_metadata import version
 
 import _webrtcvad
 
 __author__ = "John Wiseman jjwiseman@gmail.com"
 __copyright__ = "Copyright (C) 2016 John Wiseman"
 __license__ = "MIT"
-__version__ = pkg_resources.get_distribution('webrtcvad').version
-
+__version__ = version("webrtcvad")
 
 class Vad(object):
     def __init__(self, mode=None):
